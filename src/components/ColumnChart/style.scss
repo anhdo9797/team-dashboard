@@ -1,0 +1,48 @@
+@use '../../styles/theme';
+
+.column-chart {
+    .ant-row {
+        .top-city {
+            margin: 40px auto;
+            border: 2px solid rgba(255, 255, 255, 0.02);
+            border-radius: 32px;
+            background-color: #24204b;
+            padding: 24px 30px;
+            color: #928dc4;
+            margin-right: 40px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.12);
+            .top-city-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 18px;
+                line-height: 16px;
+                .ant-picker {
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    .ant-picker-input > input {
+                        color: #928dc4;
+                    }
+                }
+                .ant-picker-suffix {
+                    color: #928dc4;
+                }
+            }
+        }
+    }
+
+    .columnChart {
+        width: 100%;
+        padding: 20px 28px;
+        background-color: theme.$backgroundBox;
+        border-radius: 17px;
+        box-shadow: 3px 10px 50px -12px #000;
+        border: 0.2px solid #433e73;
+        color: theme.$colorBox;
+        h2 {
+            color: theme.$colorBox;
+            font-size: 20px;
+        }
+    }
+}

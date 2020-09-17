@@ -1,0 +1,29 @@
+.App {
+    background-color: #171430;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'ProductSans';
+    src: url('../font/ProductSans-Regular.eot') format('eot');
+    src: url('../font/ProductSans-Regular.woff') format('woff');
+    src: url('../font/ProductSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../font/ProximaNovaRegular.eot') format('eot');
+    src: url('../font/ProximaNovaRegular.woff') format('woff');
+}
+@font-face {
+    font-family: 'LeagueSpartan';
+    src: url('../font/League-Spartan-Regular.ttf.eot') format('eot');
+    src: url('../font/League-Spartan-Regular.ttf.woff') format('woff');
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
