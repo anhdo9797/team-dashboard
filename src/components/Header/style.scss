@@ -1,0 +1,126 @@
+@use '../../styles/theme';
+
+$text: theme.$textColor;
+$border: theme.$borderBox;
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    padding-top: 28px;
+    justify-content: space-between;
+    h1 {
+        font-size: 40px;
+        margin: 0;
+        color: $text;
+    }
+    h3 {
+        font-size: 20px;
+        color: $text;
+        margin: auto 28px;
+        min-width: 105px;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-end;
+        button:nth-child(4) {
+            font-size: 20px;
+            margin: auto 0 auto 28px;
+        }
+        button:nth-child(1) {
+            margin: auto 0;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+@keyframes animationMenu {
+    from {
+        opacity: 0.2;
+        height: 0;
+    }
+    to {
+        opacity: 1;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        h1 {
+            font-size: 30px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        .wrapMenu {
+            display: none;
+        }
+        .showInMobile {
+            display: flex;
+            position: relative;
+
+            .menu {
+                position: absolute;
+                top: 50px;
+                right: 0;
+                background-color: rgb(9, 5, 53);
+                z-index: 99;
+                display: inline;
+                padding: 20px 0;
+                border-radius: 10px;
+                animation-name: animationMenu;
+                animation-duration: 0.5s;
+                .item {
+                    display: flex;
+                    align-items: center;
+                    font-size: 25px;
+                    width: 90%;
+                    margin: 20px auto;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        h1 {
+            font-size: 30px;
+        }
+        h3 {
+            font-size: 18px;
+            margin: 0 3vw;
+        }
+        div {
+            display: flex;
+        }
+        .showInMobile {
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    header {
+        h1 {
+            font-size: 40px;
+        }
+        h3 {
+            font-size: 20px;
+            margin: 0 28px;
+        }
+    }
+}
