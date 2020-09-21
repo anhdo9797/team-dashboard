@@ -17,12 +17,14 @@
         outline: none;
         display: flex;
         align-items: center;
+        color: theme.$textColor;
     }
 
     ::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: theme.$textColor;
         opacity: 0.6; /* Firefox */
+        font-style: italic;
     }
     button {
         cursor: pointer;

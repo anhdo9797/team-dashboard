@@ -1,12 +1,11 @@
 import React, { Component, createRef } from 'react';
-import { Row, Col, Select, Avatar, Slider, Divider, Dropdown, Menu } from 'antd';
+import { Row, Col, Select, Avatar, Slider, Divider, Tooltip, Dropdown, Menu } from 'antd';
 import { Line } from '@ant-design/charts';
 
 import { getData } from '../../api/GetData';
 import './style.scss';
 import { avtOnce, avtTow, avtThree } from '../../assets/avatar';
 import Loading from '../Loading/Loading';
-import LineCharts from '../LineChart';
 
 const month = [
     { key: '1', label: 'January 2019' },
@@ -37,7 +36,6 @@ const WrapUser = ({ name, avatar, address, level, point, slider }) => (
                     <h3 style={{ margin: '0 10px' }}>{address}</h3>
                 </div>
             </Col>
-            <Col>
                 <Dropdown.Button
                     trigger="click"
                     overlay={menuUser}
@@ -53,20 +51,20 @@ const WrapUser = ({ name, avatar, address, level, point, slider }) => (
         <Divider style={{ borderColor: '#363071', margin: 10 }} />
     </div>
 );
-export default class ChartX extends Component {
+export default class FirstColumnChart extends Component {
     state = {
         week: [],
         month: [],
         day: [],
         select: '1',
     };
-    ref = createRef();
+    // ref = createRef();
 
-    componentDidMount() {
-        getData((dataToday) =>
-            this.setState({ week: dataToday.week, day: dataToday.date, month: dataToday.month }),
-        );
-    }
+    // componentDidMount() {
+    //     getData((dataToday) =>
+    //         this.setState({ week: dataToday.week, day: dataToday.date, month: dataToday.month }),
+    //     );
+    // }
 
     clickButton = (button) => this.setState({ select: button });
     buttonComponents = ({ key, label }) => (
@@ -105,18 +103,16 @@ export default class ChartX extends Component {
                             marginTop: '30px',
                         }}
                     >
-                        <div className="columnChart">
-                            <div className="wrapButton">
-                                {this.buttonComponents({ key: '1', label: 'DAY' })}
-                                {this.buttonComponents({ key: '2', label: 'WEEK' })}
-                                {this.buttonComponents({ key: '3', label: 'MONTH' })}
-                                {this.buttonComponents({ key: '4', label: 'YEAR' })}
-                                {this.buttonComponents({ key: '5', label: 'ALL' })}
-                            </div>
-                            <div style={{ height: 30 }} />
-                            {this.state.day.length > 0 ? <Line {...this.config()} /> : <Loading />}
-                            {/* <Line {...this.config()} /> */}
+                        <div className="wrapButton">
+                            {this.buttonComponents({ key: '1', label: 'DAY' })}
+                            {this.buttonComponents({ key: '2', label: 'WEEK' })}
+                            {this.buttonComponents({ key: '3', label: 'MONTH' })}
+                            {this.buttonComponents({ key: '4', label: 'YEAR' })}
+                            {this.buttonComponents({ key: '5', label: 'ALL' })}
                         </div>
+                        <div style={{ height: 50 }} />
+                        <Line {...this.config()} />
+                        {/* {this.state.day.length > 0 ? <Line {...this.config()} /> : <Loading />} */}
                     </Col>
 
                     <Col

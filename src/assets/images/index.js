@@ -1,2 +1,4 @@
 import chartBg from './ChartBg.svg';
-export { chartBg };
+import lineAvatar from './LineAvatar.png';
+
+export { chartBg, lineAvatar };

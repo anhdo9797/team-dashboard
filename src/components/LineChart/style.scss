@@ -1,0 +1,90 @@
+@import '../../styles/theme.scss';
+
+.select-period {
+    @include boxComponent();
+    margin: 0 auto;
+    .ant-slider-handle {
+        z-index: 3 !important;
+    }
+
+    .select-title-sub {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .wrap-content {
+        margin-bottom: 35px;
+        h2 {
+            font-size: 35px;
+            margin: 0;
+        }
+        h4 {
+            font-size: 18px;
+            margin: 0;
+            color: #635e98;
+        }
+    }
+}
+
+.total-invertment {
+    @include boxComponent();
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    line-height: 16px;
+
+    canvas {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .line-chart .container .ant-row {
+        .select-period .select-title > div:last-child {
+            font-size: 26px;
+            line-height: 32px;
+            margin-top: 28px;
+        }
+        .start-price > div:last-child {
+            font-size: 26px;
+            line-height: 32px;
+            margin-top: 28px;
+        }
+
+        .start-price > div:first-child,
+        .period-change > div:first-child {
+            font-size: 18px;
+        }
+    }
+
+    .select-period {
+        .wrap-content {
+            margin-bottom: 20px;
+            h2 {
+                font-size: 30px;
+                margin: 0;
+            }
+            h4 {
+                font-size: 16px;
+                margin: 0;
+                color: #635e98;
+            }
+        }
+    }
+
+    .total-invertment {
+        margin: 30px auto;
+    }
+}
+@media (max-width: 756px) {
+    .total-invertment {
+        margin: 30px auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .total-invertment {
+        margin-top: 0;
+    }
+}

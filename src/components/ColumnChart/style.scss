@@ -1,0 +1,54 @@
+@import '../../styles/theme';
+
+.column-chart {
+    .ant-row {
+        .top-city {
+            margin: 30px auto;
+            @include boxComponent();
+
+            .top-city-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 18px;
+                line-height: 16px;
+                .ant-picker {
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    .ant-picker-input > input {
+                        color: #928dc4;
+                    }
+                }
+                .ant-picker-suffix {
+                    color: #928dc4;
+                }
+            }
+        }
+    }
+
+    .columnChart {
+        @include boxComponent();
+    }
+}
+@media (max-width: 576px) {
+    .column-chart {
+        .ant-row {
+            .top-city {
+                margin: 0px auto;
+            }
+        }
+    }
+}
+@media (max-width: 756px) {
+    .column-chart {
+        .ant-row {
+            .top-city {
+                margin: 0px auto;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+}

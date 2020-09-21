@@ -5,7 +5,7 @@ import style from './search.scss';
 const Search = ({}) => {
     return (
         <div className="search">
-            <input style={{ width: '90%' }} placeholder="Search" />
+            <input style={{ width: '90%', fontSize: 16 }} placeholder="Search" />
             <button onClick={() => alert('button')}>
                 <ion-icon name="search-outline"></ion-icon>
             </button>

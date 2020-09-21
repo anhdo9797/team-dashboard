@@ -12,10 +12,12 @@
 }
 
 @font-face {
-    font-family: "Proxima Nova";
-    src: url("../font/ProximaNovaRegular.eot") format("eot");
-    src: url("../font/ProximaNovaRegular.woff") format("woff");
+    font-family: "ProximaNovaRegular";
+    src: url("../font/ProximaNovaRegular.eot");
+    src: local("ProximaNovaRegular"), url("../font/ProximaNovaRegular.woff") format("woff"),
+        url("../font/ProximaNovaRegular.ttf") format("truetype");
 }
+
 @font-face {
     font-family: "LeagueSpartan";
     src: url("../font/League-Spartan-Regular.ttf.eot") format("eot");
@@ -24,6 +26,7 @@
 
 .container {
     max-width: 1920px;
-    margin: auto auto;
+    margin: 0 auto;
     padding: 0 15px;
+    position: relative;
 }
