@@ -21,6 +21,7 @@ export const getData = async (callback) => {
             week,
             date,
             month,
+            data,
         };
 
         callback(totalData);

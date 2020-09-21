@@ -58,14 +58,27 @@ export default class ChartX extends Component {
         week: [],
         month: [],
         day: [],
+        respond: [],
         select: '1',
+        item: null,
+        listActiveUser: [],
     };
     ref = createRef();
 
     componentDidMount() {
         getData((dataToday) =>
-            this.setState({ week: dataToday.week, day: dataToday.date, month: dataToday.month }),
-        );
+            this.setState({
+                week: dataToday.week,
+                day: dataToday.date,
+                month: dataToday.month,
+                respond: dataToday.data,
+                listActiveUser: [dataToday.data[0], dataToday.data[1], dataToday.data[2]],
+            }),
+        ).then(() => {
+            console.log('=============state===========');
+            console.log({ ...this.state });
+            console.log('====================================');
+        });
     }
 
     clickButton = (button) => this.setState({ select: button });
@@ -90,6 +103,25 @@ export default class ChartX extends Component {
             return { data: week, xField: 'date', yField: 'total' };
         }
         return { data: month, xField: 'date', yField: 'total' };
+    };
+
+    randomUser = () => {
+        const { respond } = this.state;
+        let number = Math.floor(Math.random() * Math.floor(respond.length));
+        console.log('number', number);
+        let newArray = [];
+
+        for (let i = number; i < number + 3; i++) {
+            console.log('====================================');
+            console.log(respond[i]);
+            console.log('====================================');
+
+            newArray.push(respond[i]);
+        }
+
+        this.setState({ listActiveUser: newArray });
+
+        console.log('new', newArray);
     };
 
     render() {
@@ -138,6 +170,7 @@ export default class ChartX extends Component {
                                     dropdownStyle={{
                                         backgroundColor: '#9f9bd1',
                                     }}
+                                    onChange={this.randomUser}
                                 >
                                     {month.map((e) => (
                                         <Select.Option key={e.key}>{e.label} </Select.Option>
@@ -145,30 +178,21 @@ export default class ChartX extends Component {
                                 </Select>
                             </Row>
 
-                            <WrapUser
-                                name={'Elliot Møller'}
-                                level="15"
-                                avatar={avtOnce}
-                                address="Copenhagen, Denmark"
-                                point={4723}
-                                slider={70}
-                            />
-                            <WrapUser
-                                name={'Olivia Pedersen'}
-                                level="15"
-                                avatar={avtTow}
-                                address="Copenhagen, Denmark"
-                                point={2723}
-                                slider={80}
-                            />
-                            <WrapUser
-                                slider={60}
-                                name={'Niklas Döring'}
-                                level="15"
-                                address="Copenhagen, Denmark"
-                                point={1723}
-                                avatar={avtThree}
-                            />
+                            {this.state.day.length > 0 ? (
+                                this.state.listActiveUser.map((e, i) => (
+                                    <WrapUser
+                                        key={i}
+                                        name={e.full_name}
+                                        level="15"
+                                        avatar={e.avatar}
+                                        address={`${e.city}, ${e.country}`}
+                                        point={e.deal}
+                                        slider={Math.floor(Math.random() * Math.max(100))}
+                                    />
+                                ))
+                            ) : (
+                                <Loading />
+                            )}
                         </div>
                     </Col>
                 </Row>

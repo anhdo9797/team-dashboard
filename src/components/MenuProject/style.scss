@@ -8,7 +8,7 @@
     align-items: center;
     width: 90px;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     left: 10px;
     z-index: 5;
     box-shadow: 0 10px 40px -33px #000000;
@@ -27,6 +27,7 @@
         border-radius: 50%;
         margin: 32px auto;
     }
+
     .ant-scroll-number {
         position: absolute;
         top: 40px;
@@ -49,19 +50,31 @@
             transition: 0.5s;
             padding: 25px 0 !important ;
             width: 95px;
-
-            box-shadow: 0 5px 15px -10px #0f1111 !important;
         }
 
         .ant-menu-item:active {
-            background-image: linear-gradient(to right, #679cf6, #4072ee) !important;
-
+            // background: rgb(103, 156, 246);
+            background: linear-gradient(
+                180deg,
+                rgba(103, 156, 246, 1) 0%,
+                rgba(64, 114, 238, 1) 83%
+            ) !important;
             box-shadow: 0 5px 15px -10px #0f1111 !important;
         }
 
         span.anticon {
             border-bottom: 1px solid #363071;
             padding: 12px 0;
+        }
+
+        .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal),
+        .ant-menu-item-selected {
+            background: linear-gradient(
+                180deg,
+                rgba(103, 156, 246, 1) 0%,
+                rgba(64, 114, 238, 1) 83%
+            ) !important;
+            box-shadow: 0 5px 15px -10px #0f1111 !important;
         }
     }
 

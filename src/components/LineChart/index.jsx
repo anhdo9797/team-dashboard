@@ -68,12 +68,11 @@ export default class LineCharts extends Component {
                 <Col xs={24} md={12} lg={13}>
                     <div className="select-period">
                         <div className="select-title">
-                            {/* div  "select-title" ở đây có mục đích chi ? */}
                             <div className="select-title-sub">
                                 <h2>Selected Period</h2>
-                                <button style={{ cursor: 'pointer' }}>
-                                    <DashOutlined />
-                                </button>
+                                <div style={{ cursor: 'pointer' }}>
+                                    <DashOutlined style={{ fontSize: 18 }} />
+                                </div>
                             </div>
                         </div>
                         <div className="wrap-content">
@@ -92,7 +91,7 @@ export default class LineCharts extends Component {
                     <div className="total-title">
                         <h2>Total Investment</h2>
                         <div style={{ cursor: 'pointer' }}>
-                            <DashOutlined />
+                            <DashOutlined style={{ fontSize: 18 }} />
                         </div>
                     </div>
                     <Donut {...config} />

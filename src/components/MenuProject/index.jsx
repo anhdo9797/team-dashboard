@@ -54,7 +54,6 @@ export default class MenuProject extends Component {
                     defaultOpenKeys={['sub1']}
                     mode="inline"
                     theme="dark"
-                    inlineCollapsed={this.state.collapsed}
                 >
                     <Menu.Item
                         key="1"
@@ -74,7 +73,7 @@ export default class MenuProject extends Component {
                         icon={<ContainerOutlined style={{ fontSize: 20 }} />}
                     ></Menu.Item>
                 </Menu>
-                <Button type="primary" onClick={this.toggleCollapsed}>
+                <Button type="primary">
                     <img src={iconPlus} alt="icon" />
                 </Button>
             </div>

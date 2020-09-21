@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import style from './style.scss';
 
 import Search from '../InputSearch/Search';
-import { Drawer, Menu, Tooltip } from 'antd';
+import { Drawer, Dropdown, Menu, Tooltip } from 'antd';
 import {
     DesktopOutlined,
     ContainerOutlined,
@@ -14,12 +14,19 @@ import {
     MenuFoldOutlined,
 } from '@ant-design/icons';
 
+const menuDrop = (
+    <Menu style={{ backgroundColor: 'rgb(100,152,245)' }}>
+        <Menu.Item style={{ color: 'white' }}>Theme</Menu.Item>
+        <Menu.Item style={{ color: 'white' }}>Langue</Menu.Item>
+    </Menu>
+);
+
 const IconButton = ({ onClick, icon, title }) => (
-    <Tooltip trigger="click" title={title}>
+    <Dropdown trigger="click" title={title} overlay={menuDrop}>
         <button onClick={onClick}>
             <ion-icon name={icon} />
         </button>
-    </Tooltip>
+    </Dropdown>
 );
 
 export default class Header extends Component {
