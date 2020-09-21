@@ -62,11 +62,11 @@ export default class ChartX extends Component {
     };
     ref = createRef();
 
-    // componentDidMount() {
-    //     getData((dataToday) =>
-    //         this.setState({ week: dataToday.week, day: dataToday.date, month: dataToday.month }),
-    //     );
-    // }
+   componentDidMount() {
+   getData((dataToday) =>
+        this.setState({ week: dataToday.week, day: dataToday.date, month: dataToday.month }),
+       );
+    }
 
     clickButton = (button) => this.setState({ select: button });
     buttonComponents = ({ key, label }) => (
