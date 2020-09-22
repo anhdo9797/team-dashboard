@@ -1,0 +1,111 @@
+@import 'antd/dist/antd.css';
+
+.menu {
+    border-radius: 90px;
+    background: #24204b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    justify-content: space-between;
+    position: fixed;
+    left: 10px;
+    z-index: 5;
+    box-shadow: 0 10px 40px -33px #000000;
+    top: 20px;
+    bottom: 20px;
+
+    .lineAvatar {
+        position: absolute;
+        width: 75px;
+        top: 20px;
+        left: 7.5px;
+    }
+
+    .ant-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 32px auto;
+    }
+
+    .ant-scroll-number {
+        position: absolute;
+        top: 40px;
+        left: 80px;
+        font-size: 20px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .ant-menu {
+        background: transparent;
+        text-align: center;
+        margin: 0 auto;
+        .ant-menu-item {
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            transition: 0.5s;
+            padding: 25px 0 !important ;
+            width: 95px;
+        }
+
+        .ant-menu-item:active {
+            // background: rgb(103, 156, 246);
+            background: linear-gradient(
+                180deg,
+                rgba(103, 156, 246, 1) 0%,
+                rgba(64, 114, 238, 1) 83%
+            ) !important;
+            box-shadow: 0 5px 15px -10px #0f1111 !important;
+        }
+
+        span.anticon {
+            border-bottom: 1px solid #363071;
+            padding: 12px 0;
+        }
+
+        .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal),
+        .ant-menu-item-selected {
+            background: linear-gradient(
+                180deg,
+                rgba(103, 156, 246, 1) 0%,
+                rgba(64, 114, 238, 1) 83%
+            ) !important;
+            box-shadow: 0 5px 15px -10px #0f1111 !important;
+        }
+    }
+
+    .ant-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 15px;
+        background: #6d46ff;
+        transform: rotate(45deg);
+        margin: 50px auto;
+        border: #707070;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            transform: rotate(-45deg);
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .menu {
+        display: flex;
+    }
+}
